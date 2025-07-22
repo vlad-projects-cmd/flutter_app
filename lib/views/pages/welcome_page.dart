@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/views/pages/login_page.dart';
-import 'package:flutter_app/views/widget_tree.dart';
+import 'package:flutter_app/views/pages/register_page.dart';
 import 'package:flutter_app/views/widgets/hero_widget.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -14,7 +14,7 @@ class WelcomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            FittedBox(
+            const FittedBox(
               child: Text(
                 'My Little Fridge',
                 style: TextStyle(
@@ -24,36 +24,32 @@ class WelcomePage extends StatelessWidget {
                 ),
               ),
             ),
-            HeroWidget(isWelcomePage: true),
-            SizedBox(height: 20.0),
+            const HeroWidget(isWelcomePage: true),
+            const SizedBox(height: 20.0),
             FilledButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return LoginPage();
-                    },
-                  ),
+                  MaterialPageRoute(builder: (context) => const RegisterPage()),
                 );
               },
-              style: FilledButton.styleFrom(minimumSize: Size(200.0, 40.0)),
-              child: Text('Register'),
+              style: FilledButton.styleFrom(
+                minimumSize: const Size(200.0, 40.0),
+              ),
+              child: const Text('Register'),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             FilledButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return WidgetTree();
-                    },
-                  ),
+                  MaterialPageRoute(builder: (context) => const LoginPage()),
                 );
               },
-              style: FilledButton.styleFrom(minimumSize: Size(200.0, 40.0)),
-              child: Text('Login'),
+              style: FilledButton.styleFrom(
+                minimumSize: const Size(200.0, 40.0),
+              ),
+              child: const Text('Login'),
             ),
           ],
         ),

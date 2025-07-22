@@ -1,5 +1,3 @@
-// views/widgets/navbar_widget.dart
-
 import 'package:flutter/material.dart';
 import 'package:flutter_app/data/notifiers.dart';
 import 'package:lottie/lottie.dart';
@@ -15,13 +13,15 @@ class NavbarWidget extends StatelessWidget {
         return NavigationBar(
           selectedIndex: selectedPage,
           onDestinationSelected: (int value) {
+            print('Selected index: $value');
             selectedPageNotifier.value = value;
           },
+
           destinations: [
             NavigationDestination(
               icon: Lottie.asset(
                 'assets/lotties/pot.json',
-                width: 30, // Adjust size to match icon scale
+                width: 30,
                 height: 30,
               ),
               label: 'History',
