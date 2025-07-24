@@ -23,12 +23,10 @@ class HeroWidget extends StatelessWidget {
                     ? Lottie.asset(
                         'assets/lotties/welcome.json',
                         fit: BoxFit.cover,
-                        alignment: Alignment.center,
                       )
                     : Image.asset(
                         'assets/images/background-2.jpg',
                         fit: BoxFit.cover,
-                        alignment: Alignment.center,
                         color: Colors.blue.withOpacity(0.5),
                         colorBlendMode: BlendMode.modulate,
                       ),

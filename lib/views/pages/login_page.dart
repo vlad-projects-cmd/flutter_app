@@ -31,35 +31,37 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Login')),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            const HeroWidget(isWelcomePage: false),
-            const SizedBox(height: 20.0),
-            TextFormField(
-              controller: _emailController,
-              decoration: const InputDecoration(
-                labelText: 'Email or Username',
-                border: OutlineInputBorder(),
+      body: Center(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+              const HeroWidget(isWelcomePage: false),
+              const SizedBox(height: 20.0),
+              TextFormField(
+                controller: _emailController,
+                decoration: const InputDecoration(
+                  labelText: 'Email or Username',
+                  border: OutlineInputBorder(),
+                ),
               ),
-            ),
-            const SizedBox(height: 15.0),
-            TextFormField(
-              controller: _passwordController,
-              decoration: const InputDecoration(
-                labelText: 'Password',
-                border: OutlineInputBorder(),
+              const SizedBox(height: 15.0),
+              TextFormField(
+                controller: _passwordController,
+                decoration: const InputDecoration(
+                  labelText: 'Password',
+                  border: OutlineInputBorder(),
+                ),
+                obscureText: true,
               ),
-              obscureText: true,
-            ),
-            const SizedBox(height: 25.0),
-            FilledButton(
-              onPressed: _handleLogin,
-              style: FilledButton.styleFrom(minimumSize: const Size(200, 40)),
-              child: const Text('Login'),
-            ),
-          ],
+              const SizedBox(height: 25.0),
+              FilledButton(
+                onPressed: _handleLogin,
+                style: FilledButton.styleFrom(minimumSize: const Size(200, 40)),
+                child: const Text('Login'),
+              ),
+            ],
+          ),
         ),
       ),
     );
